@@ -35,7 +35,8 @@ jobs:
 
     - name: Install goose
       run: |
-        go install github.com/pressly/goose/v3/cmd/goose@latest
+          go install github.com/pressly/goose/v3/cmd/goose@latest
+          echo "/home/runner/go/bin" >> $GITHUB_PATH
 
     - name: Run migrations
       run: ./scripts/migrateup.sh
